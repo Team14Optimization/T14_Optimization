@@ -9,18 +9,25 @@ xs= [0 0 0 0 0 0;
     0 0 0 0 0 0;
     0 0 0 0 0 0;
     0 0 0 0 0 0;
-    0 0 0 0 0 0]
+    0 0 0 0 0 0];
 for i=1:length(materials)
+    disp("===Optimising for material "+i+"===")
     m=cell2mat(materials(i,:));
     x0 = [0.04, 0.005, 0.001];
     A =[1,1,1;-1,-1,-1]; b=[0.037;-0.0125]; 
     Aeq=[]; Beq=[]; 
     lb=[0.03,0.001,0.001]; ub=[100,200,200];
-    options = optimoptions('fmincon','Display','iter', 'MaxIterations', 100)
+    options = optimoptions('fmincon','MaxIterations', 100);
+    %options = optimoptions('fmincon','Display','iter', 'MaxIterations',
+    %100) %display iterations
     [x,fval, exitflag, output]=fmincon(@obj,x0,A,b,Aeq,Beq,lb,ub,@nonlcon,options);
     xs(i,:)=[x, m(1:3)]; 
     fs(i)=fval;
 end
+xs=[fs',xs];
+disp("Parametrised Optimisation results: ")
+T = array2table(xs,'VariableNames',{'f','rm', 'Da', 'Dc', 'd', 'k', 'Cc'},'RowNames',{'LDPE','HDPE','PP C', 'PP H', 'ABS', 'PEEK'});
+disp(T)
 %Nonlinear Constraint Function 
 function [c, ceq] = nonlcon(x)
 global m

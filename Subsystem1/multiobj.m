@@ -1,6 +1,7 @@
 %%Subsystem 1 -Casing-
 %%Multi Objective Optimisation
 %%Weight & Temperature
+disp("===Multiobjective Optimization===")
 FitnessFunction = @simple_multiobjective;
 n=6;
 options = optimoptions(@gamultiobj,'PlotFcn',{@gaplotpareto,@gaplotscorediversity});
@@ -14,6 +15,10 @@ idx = find(f3==min(f3)); %find minimum when both objectives are considered
 
 solution_x=x(idx,:);
 solution_f=fval(idx,:);
+
+disp("Objective 1 minimum: "+solution_f(1))
+disp("Objective 2 minimum: "+solution_f(2))
+disp(table(solution_x(1),solution_x(2),solution_x(3),solution_x(4),solution_x(5),solution_x(6),'VariableNames',{'rm', 'Da', 'Dc', 'd', 'k', 'Cc'}))
 
  function f = simple_multiobjective(x)
    global beta_coeff
