@@ -2,6 +2,8 @@
 
 ## Blender optimisation
 
+We examined how to optimise a blender to be comfortable to use and powerful. For this casing and blades were individually optimised first.
+
 ### Subsystem 1: Casing
 
 ![Casing segment CAD model](/imgs/casing_cad.png)
