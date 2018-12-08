@@ -7,7 +7,8 @@
 ![Casing](/imgs/casing_cad.png)
 
 #### How to run
- - Need to have rsquare.m from Matlab File Exchange
+![Casing](/imgs/casing_cad.png)
+ - First download 'rsquare.m' from Matlab File Exchange [here](https://uk.mathworks.com/matlabcentral/fileexchange/34492-r-square-the-coefficient-of-determination)
  - Metamodel data - 'data.csv' & 'data2.csv'
  - Create meta model - 'model.m'
  - Perform optimisation - 'casing_main.m'
