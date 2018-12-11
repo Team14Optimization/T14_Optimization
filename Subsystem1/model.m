@@ -57,22 +57,88 @@ disp("Linear model Test dataset R2: "+lin_tst_r2)
 w = warning ('off','all');
 disp("====Fitting nonlinear model====")
 %Model guess
-modelfun=@(b,x) b(1).*x(:,1)+b(2).*x(:,2)+b(3).*x(:,3)+b(4).*x(:,4)+b(5).*x(:,5)+b(6).*x(:,6)+b(7).*x(:,5).^2+b(8).*(x(:,4).^2)+b(9).*(x(:,3).^2)+b(10)./x(:,4)+b(11)./x(:,2)+b(12);
-%removing linear x1 and x4 has little impact (rng 6)
-beta0=zeros(12,1); %coefficients guess
+modelfun=@(b,x) b(1).*x(:,2)+b(2).*x(:,3)+b(3).*x(:,2).^2+b(4).*x(:,3).^2+b(5).*x(:,4).^2+b(6).*x(:,5).^2+b(7)./x(:,1)+b(8)./x(:,2)+b(9)./x(:,4)+b(10)./x(:,5)+b(11)./x(:,6)+b(12).*x(:,1).*x(:,2)+b(13).*x(:,1).*x(:,3)+b(14).*x(:,1).*x(:,4)+b(15).*x(:,2).*x(:,3)+b(16).*x(:,4).*x(:,2)+b(17).*x(:,5).*x(:,2)+b(18).*x(:,3).*x(:,6);
+beta0=zeros(18,1); %coefficients guess
 
 %Fit nonlinear model
 [beta_coeff,R,J,CovB,MSE,ErrorModelInfo] = nlinfit(Xtrain,Ytrain,modelfun,beta0);
 
 %Evaluate model
 yguess1=modelfun(beta_coeff, Xtrain);
-[nln_tr_r2 nln_tr_rmse1] = rsquare(Ytrain,yguess1);
+[nln_tr_r2 nln_tr_rmse] = rsquare(Ytrain,yguess1);
 %Test model
 yguess2=modelfun(beta_coeff, Xtest);
-[nln_tst_r2 nln_tst_rmse2] = rsquare(Ytest,yguess2); 
+[nln_tst_r2 nln_tst_rmse] = rsquare(Ytest,yguess2); 
 
-disp("Nonlinear model Training dataset R2: "+nln_tr_r2) 
-disp("Nonlinear model Test dataset R2: "+nln_tst_r2) 
+%
+%% Plot nonlinear model 
+%evalute fit by inspection
+fig=figure();
+
+subplot(2,3,1);
+scatter(Xtrain(:,1),Ytrain,'filled')
+hold on
+scatter(Xtrain(:,1),yguess1,'filled')
+hold on
+scatter(Xtest(:,1),Ytest)
+hold on
+scatter(Xtest(:,1),yguess2)
+title('Rm')
+
+subplot(2,3,2)
+scatter(Xtrain(:,2),Ytrain,'filled')
+hold on
+scatter(Xtrain(:,2),yguess1,'filled')
+hold on
+scatter(Xtest(:,2),Ytest)
+hold on
+scatter(Xtest(:,2),yguess2)
+title('Da')
+
+subplot(2,3,3);
+scatter(Xtrain(:,3),Ytrain,'filled')
+hold on
+scatter(Xtrain(:,3),yguess1,'filled')
+hold on
+scatter(Xtest(:,3),Ytest)
+hold on
+scatter(Xtest(:,3),yguess2)
+title('Dc')
+
+subplot(2,3,4);
+scatter(Xtrain(:,4),Ytrain,'filled')
+hold on
+scatter(Xtrain(:,4),yguess1,'filled')
+hold on
+scatter(Xtest(:,4),Ytest)
+hold on
+scatter(Xtest(:,4),yguess2)
+title('density')
+
+subplot(2,3,5);
+scatter(Xtrain(:,5),Ytrain,'filled')
+hold on
+scatter(Xtrain(:,5),yguess1,'filled')
+hold on
+scatter(Xtest(:,5),Ytest)
+hold on
+scatter(Xtest(:,5),yguess2)
+title('k')
+
+subplot(2,3,6);
+scatter(Xtrain(:,6),Ytrain,'filled','DisplayName','Train data')
+hold on
+scatter(Xtrain(:,6),yguess1,'filled', 'DisplayName','Predicted data')
+hold on
+scatter(Xtest(:,6),Ytest,'DisplayName','Test data')
+hold on
+scatter(Xtest(:,6),yguess2, 'DisplayName','Predicted data')
+title('Cc')
+sgtitle('Plotted model prediction vs actual')
+legend
+
+disp("Nonlinear model Training dataset RMSE: "+nln_tr_rmse) 
+disp("Nonlinear model Test dataset RMSE: "+nln_tst_rmse) 
 
 %dlmwrite('models.csv',[N seed lin_tr_r2, lin_tst_r2, nln_tr_r2, nln_tst_r2],'delimiter',',','-append');
 disp("Final model: ")

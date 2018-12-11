@@ -51,5 +51,5 @@ function f=obj(x)
 global beta_coeff
 beta=beta_coeff;
 %metamodel from model.m
-f = beta(1).*x(1)+beta(2).*x(2)+beta(3).*x(3)+beta(4).*x(4)+beta(5).*x(5)+beta(6).*x(6)+beta(7).*x(5).^2+beta(8).*x(4).^2+beta(9)*x(3).^2+beta(10)./x(4)+beta(11)./x(2)+beta(12);
+f=beta(1)*x(2)+beta(2)*x(3)+beta(3)*x(2)^2+beta(4)*x(3).^2+beta(5).*x(4)^2+beta(6)*x(5)^2+beta(7)/x(1)+beta(8)/x(2)+beta(9)/x(4)+beta(10)/x(5)+beta(11)/x(6)+beta(12)*x(1)*x(2)+beta(13)*x(1)*x(3)+beta(14)*x(1)*x(4)+beta(15)*x(2)*x(3)+beta(16)*x(4)*x(2)+beta(17)*x(5)*x(2)+beta(18)*x(3)*x(6);
 end
