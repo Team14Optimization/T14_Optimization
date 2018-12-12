@@ -1,15 +1,4 @@
-% ATC_Demo1 demonstrates Analytical Target Cascading (ATC), a method for
-% solving large-scale engineering design problems, by solving a simple
-% analytical optimization problem. The purpose is not to demonstrate the
-% benefits of ATC, but to illustrate its implementation clearly. The
-% optimization problem is solved first using the standard (undecomposed)
-% approach. The ATC implementation is then demonstrated, and the results of
-% the two approaches are shown to be identical (within specified precision).
-%
-% To execute the example, type ATC_Demo1 at the Matlab command prompt.
-%
-% Author: James T. Allison
-
+% Based on ATC_Demo1.m by Author: James T. Allison
 
 clc
 
