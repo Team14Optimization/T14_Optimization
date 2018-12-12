@@ -31,7 +31,7 @@ disp('----------------------------')
 
 options = optimoptions('fmincon','Display','iter', 'MaxIterations', 100);
 [x,fopt] = fmincon(@AiOobj,x0,A,b,[],[],lb,ub,@nonlcon,options);
-disp(['x*=[' num2str(x(1)) ', ' num2str(x(2)) '], f(x*)=' num2str(fopt)])
+disp(['x*=[' num2str(x(1)) ', ' num2str(x(2)) ',' num2str(x(3)) ',' num2str(x(4)) ',' num2str(x(5)) ',' num2str(x(6)) ',' num2str(x(7)) ',' num2str(x(8)) ',' num2str(x(9)) ',' num2str(x(10)) '], f(x*)=' num2str(fopt)])
 
 %% AIO FUNCTIONS:
 
