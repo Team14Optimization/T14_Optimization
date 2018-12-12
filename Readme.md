@@ -19,3 +19,9 @@ We examined how to optimise a blender to be comfortable to use and powerful. For
    - FONC evaluation - 'fonc.m'
 
 ### Subsysystem 2: Blades
+
+### System : Blender
+#### How to run
+-Run 'time.m' to fit model to Temperature vs time data
+-Run 'AIO.m' to perform All in one optimisation of the system
+
