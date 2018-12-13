@@ -21,6 +21,15 @@ We examined how to optimise a blender to be comfortable to use and powerful. For
 
 ### Subsysystem 2: Blades
 
+Subsystem 2 looks at optimizing the blades for the least amount of time taken per rotation. The optimization studies were done using the three algorithms in fmincon and the global search. 
+
+The genetic algorithm mutli-objective solver was then used to find an optimum for the lightest and fastest blade. 
+
+- fmincon - "fminconBlades.m"
+- global search - "globalsearch.m"
+- multi-objective genetic algorithm - "multiObjBlades.m"
+
+
 ### System : Blender
 #### How to run
  - Ensure 'model.m' has been run beforehand and the generated variable 'beta_coeff' is in the workspace
