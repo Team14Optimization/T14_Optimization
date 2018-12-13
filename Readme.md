@@ -19,16 +19,19 @@ We examined how to optimise a blender to be comfortable to use and powerful. For
    - Parametric study - 'sens.m'
    - FONC evaluation - 'fonc.m'
 
-### Subsysystem 2: Blades
+### Subsystem 2: Blades
 
 Subsystem 2 looks at optimizing the blades for the least amount of time taken per rotation. The optimization studies were done using the three algorithms in fmincon and the global search. 
 
 The genetic algorithm mutli-objective solver was then used to find an optimum for the lightest and fastest blade. 
 
+#### How to run
+Run the following files, make sure the parameters clear between each run:
 - fmincon - "fminconBlades.m"
 - global search - "globalsearch.m"
 - multi-objective genetic algorithm - "multiObjBlades.m"
 
+note: the genetic algorithm will give different results each time it runs, meaning it will not match the values given in the report. 
 
 ### System : Blender
 #### How to run
