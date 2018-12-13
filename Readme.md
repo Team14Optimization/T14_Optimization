@@ -25,6 +25,8 @@ Subsystem 2 looks at optimizing the blades for the least amount of time taken pe
 
 The genetic algorithm mutli-objective solver was then used to find an optimum for the lightest and fastest blade. 
 
+![Blade Simplified Model](/imgs/BladeModel.png)
+
 #### How to run
 Run the following files, make sure the parameters clear between each run:
 - fmincon - "fminconBlades.m"
