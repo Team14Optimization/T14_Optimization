@@ -9,7 +9,7 @@ We examined how to optimise a blender to be comfortable to use and powerful. For
 ![Casing segment CAD model](/imgs/casing_cad.png)
 
 #### How to run
- - Download 'rsquare.m' from Matlab File Exchange [here](https://uk.mathworks.com/matlabcentral/fileexchange/34492-r-square-the-coefficient-of-determination)
+ - Download 'rsquare.m' from Matlab File Exchange [here](https://uk.mathworks.com/matlabcentral/fileexchange/34492-r-square-the-coefficient-of-determination) and place it in the 'Subsystem1' directory
  - Ensure metamodel data - 'data.csv' or 'data2.csv' is available
  - Before using any other scripts run 'model.m' to create meta model
  - Run other scripts
