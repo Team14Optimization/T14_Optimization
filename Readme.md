@@ -16,6 +16,7 @@ We examined how to optimise a blender to be comfortable to use and powerful. For
    - Perform optimisation - 'casing_main.m'
    - Paramatrised optimisation - 'casing_parametrized_main.m'
    - Multiobjective optimisation - 'multiobj.m'
+   - Parametric study - 'sens.m'
    - FONC evaluation - 'fonc.m'
 
 ### Subsysystem 2: Blades
