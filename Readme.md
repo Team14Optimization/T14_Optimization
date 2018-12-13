@@ -4,7 +4,7 @@
 
 We examined how to optimise a blender to be comfortable to use and powerful. For this casing and blades were individually optimised first.
 
-### Subsystem 1: Casing Karolina Jankiewicz
+### Subsystem 1: Casing, Karolina Jankiewicz
 
 ![Casing segment CAD model](/imgs/casing_cad.png)
 
@@ -19,7 +19,7 @@ We examined how to optimise a blender to be comfortable to use and powerful. For
    - Parametric study - 'sens.m'
    - FONC evaluation - 'fonc.m'
 
-### Subsystem 2: Blades Tessa Smulders
+### Subsystem 2: Blades, Tessa Smulders
 
 Subsystem 2 looks at optimizing the blades for the least amount of time taken per rotation. The optimization studies were done using the three algorithms in fmincon and the global search. 
 
@@ -33,9 +33,13 @@ Run the following files, make sure the parameters clear between each run:
 - global search - "globalsearch.m"
 - multi-objective genetic algorithm - "multiObjBlades.m"
 
-note: the genetic algorithm will give different results each time it runs, meaning it will not match the values given in the report. 
+note: the genetic algorithm will give different results each time it runs, meaning it will not match the values given in the report
+
 
 ### System : Blender
+
+We are optimizing the blender for comfort and have used the All in One method to do so. 
+
 #### How to run
  - Ensure 'model.m' has been run beforehand and the generated variable 'beta_coeff' is in the workspace
  - Run 'time.m' to fit model to Temperature vs time data
