@@ -35,6 +35,10 @@ Run the following files, make sure the parameters clear between each run:
 
 note: the genetic algorithm will give different results each time it runs, meaning it will not match the values given in the report
 
+#### Materials
+The material density was taken to be a continuous function. When a value is found, then the closest material is chosen from the list based on values found in CES Edupack. 
+
+![Food safe metals and their densities](/imgs/MaterialListBlades.png)
 
 ### System : Blender
 
