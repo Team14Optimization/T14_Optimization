@@ -25,4 +25,4 @@ We examined how to optimise a blender to be comfortable to use and powerful. For
  - Ensure 'model.m' has been run beforehand and the generated variable 'beta_coeff' is in the workspace
  - Run 'time.m' to fit model to Temperature vs time data
  - Run 'AIO.m' to perform All in one optimisation of the system
-
+ - Run 'AIO_p.m' to perform All in one optimisation of the system with fixed casing material
