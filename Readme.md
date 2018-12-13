@@ -4,7 +4,7 @@
 
 We examined how to optimise a blender to be comfortable to use and powerful. For this casing and blades were individually optimised first.
 
-### Subsystem 1: Casing
+### Subsystem 1: Casing Karolina Jankiewicz
 
 ![Casing segment CAD model](/imgs/casing_cad.png)
 
@@ -19,7 +19,7 @@ We examined how to optimise a blender to be comfortable to use and powerful. For
    - Parametric study - 'sens.m'
    - FONC evaluation - 'fonc.m'
 
-### Subsystem 2: Blades
+### Subsystem 2: Blades Tessa Smulders
 
 Subsystem 2 looks at optimizing the blades for the least amount of time taken per rotation. The optimization studies were done using the three algorithms in fmincon and the global search. 
 
