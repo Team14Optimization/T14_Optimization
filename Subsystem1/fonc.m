@@ -9,11 +9,19 @@ f=beta(1)*x+beta(2)*x3+beta(3)*x2^2+beta(4)*x3.^2+beta(5)*x4^2+beta(6)*x5^2+beta
 grad=[diff(f, x1), diff(f, x2),diff(f, x3),diff(f, x4),diff(f, x5),diff(f, x6)];
 
 %second derivative
-grad2=[diff(f, x1, x1), diff(f, x2, x2),diff(f, x3,x3),diff(f, x4,x4),diff(f, x5,x5),diff(f, x6,x6)];
+grad2=[diff(f, x1, x1), diff(f, x1, x2),diff(f, x1,x3),diff(f, x1,x4),diff(f, x1,x5),diff(f, x1,x6);
+    diff(f, x2, x1), diff(f, x2, x2),diff(f, x2,x3),diff(f, x2,x4),diff(f, x2,x5),diff(f, x2,x6);
+    diff(f, x3, x1), diff(f, x3, x2),diff(f, x3,x3),diff(f, x3,x4),diff(f, x3,x5),diff(f, x3,x6);
+    diff(f, x4, x1), diff(f, x4, x2),diff(f, x4,x3),diff(f, x4,x4),diff(f, x4,x5),diff(f, x4,x6);
+    diff(f, x5, x1), diff(f, x5, x2),diff(f, x5,x3),diff(f, x5,x4),diff(f, x5,x5),diff(f, x5,x6);
+    diff(f, x6, x1), diff(f, x6, x2),diff(f, x6,x3),diff(f, x6,x4),diff(f, x6,x5),diff(f, x6,x6)];
 disp("Checking FONC ")
+%% 
+
 %solve for df/d(x(i))=0 x(i) value
-g1=solve(grad(1)==0,x1)
-g2=solve(grad(2)==0,x2)
-g3=solve(grad(3)==0,x3)
-g4=solve(grad(4)==0,x4)
-g5=solve(grad(5)==0,x5)
+g1=solve(grad(1)==0,x1,x2,x3,x4,x5,x6)
+g2=solve(grad(2)==0,x1,x2,x3,x4,x5,x6)
+g3=solve(grad(3)==0,x1,x2,x3,x4,x5,x6)
+g4=solve(grad(4)==0,x1,x2,x3,x4,x5,x6)
+g5=solve(grad(5)==0,x1,x2,x3,x4,x5,x6)
+g5=solve(grad(6)==0,x1,x2,x3,x4,x5,x6)
