@@ -1,7 +1,5 @@
-%%% Sub-System 2 - Blades
-%%% Multi Objective Optimisation
-%%% Mass & Time
-%  disp("===Multiobjective Optimization===")
+%%% Multi Objective Optimisation Blades
+
 
 clc
 clear
@@ -19,8 +17,9 @@ options = optimoptions(@gamultiobj,'PlotFcn',{@gaplotpareto});
 [x, fval] = gamultiobj(FitnessFunction,n,A,b,Aeq,beq,lb,ub,@nonlcon,options);
 
 %% Weighting the Functions 
+%normalize the function and find the point where both objectives are at their minimum
 
-fnorm = mapstd(fval'); 
+fnorm = mapstd(fval');  
 
 multifun = 0.5*fnorm(1,:)+0.5*fnorm(2,:); 
 
