@@ -10,7 +10,7 @@ We examined how to optimise a blender to be comfortable to use and powerful. For
 
 Example of Solidworks thermal study result
 ![Thermal simulation](/imgs/study.png)
-
+[Download the model here](https://drive.google.com/file/d/1TLNP2ZQR4vJs7LGQcjT-XQDX_o2Kvs6i/view?usp=sharing)
 #### How to run
  - Download 'rsquare.m' from Matlab File Exchange [here](https://uk.mathworks.com/matlabcentral/fileexchange/34492-r-square-the-coefficient-of-determination) and place it in the 'Subsystem1' directory
  - Run 'sample_gen.m' to generate an array with data samples
