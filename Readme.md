@@ -8,11 +8,12 @@ We examined how to optimise a blender to be comfortable to use and powerful. For
 
 ![Casing segment CAD model](/imgs/casing_cad.png)
 
-Example of study
+Example of Solidworks thermal study result
 ![Thermal simulation](/imgs/study.png)
 
 #### How to run
  - Download 'rsquare.m' from Matlab File Exchange [here](https://uk.mathworks.com/matlabcentral/fileexchange/34492-r-square-the-coefficient-of-determination) and place it in the 'Subsystem1' directory
+ - Run 'sample_gen.m' to generate an array with data samples
  - Ensure metamodel data - 'data.csv' or 'data2.csv' is available
  - Before using any other scripts run 'model.m' to create meta model
  - Run other scripts
