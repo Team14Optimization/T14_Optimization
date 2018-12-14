@@ -10,9 +10,7 @@ ub=[0.08,0.1,0.05,10];
 rng default
 gs = GlobalSearch;
 
-problem = createOptimProblem('fmincon',...
-    'x0',x0,...
-    'objective',@objective,'nonlcon',@nlcon,'lb',lb,'ub',ub);
+problem = createOptimProblem('fmincon','x0',x0,'objective',@objective,'nonlcon',@nlcon,'lb',lb,'ub',ub);
 x = run(gs,problem);
 
 disp(table(x(1),x(2),x(3),x(4),'VariableNames',{'l', 'h', 'b', 'density'}))
